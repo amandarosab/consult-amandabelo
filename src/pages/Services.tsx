@@ -3,7 +3,12 @@ import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { CheckCircle, ArrowRight, Star, Clock, Users } from 'lucide-react';
 
-const Services: React.FC = () => {
+// Adicionamos uma interface para as props do componente
+interface ServicesProps {
+  isPage?: boolean; // Prop para controlar se é a página completa ou uma secção
+}
+
+const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
   const { ref, isVisible } = useScrollAnimation();
 
   const services = [
@@ -24,7 +29,7 @@ const Services: React.FC = () => {
     },
     {
       title: "Otimização de Currículo (Foco em ATS)",
-      price: "R$ 50,00",
+      price: "R$ 60,00",
       description: "Garanta que seu currículo passe pelos filtros automáticos (ATS) e chegue às mãos dos recrutadores. Um CV preparado para gerar mais entrevistas.",
       highlights: [
         "Formato otimizado para softwares e humanos",
@@ -39,7 +44,7 @@ const Services: React.FC = () => {
     },
     {
       title: "Preparação para Entrevista Comportamental",
-      price: "R$ 70,00",
+      price: "R$ 75,00",
       description: "Desenvolva confiança e aprenda a responder de forma estratégica, comunicando seu valor de forma clara e convincente em uma sessão de simulação prática.",
       highlights: [
         "Simulação individual online",
@@ -108,27 +113,31 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Nossos <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">Serviços</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-              Soluções personalizadas para impulsionar sua carreira e conquistar as melhores oportunidades
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    // Adiciona padding superior apenas quando for a página completa
+    <div className={isPage ? "pt-20" : ""}>
+      
+      {/* Hero Section - Renderiza apenas se 'isPage' for verdadeiro */}
+      {isPage && (
+        <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center text-white"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Nossos <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">Serviços</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+                Soluções personalizadas para impulsionar sua carreira e conquistar as melhores oportunidades
+              </p>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
-      {/* Services Grid */}
+      {/* Services Grid - Esta secção será sempre visível */}
       <section ref={ref} className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -197,46 +206,48 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Como <span className="text-purple-600">Trabalhamos</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Um processo estruturado e eficiente para garantir os melhores resultados
-            </p>
-          </motion.div>
+      {/* Process Section - Renderiza apenas se 'isPage' for verdadeiro */}
+      {isPage && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Como <span className="text-purple-600">Trabalhamos</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Um processo estruturado e eficiente para garantir os melhores resultados
+              </p>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="text-center relative"
-              >
-                <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                
-                {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-purple-200 to-blue-200 transform -translate-x-1/2"></div>
-                )}
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="text-center relative"
+                >
+                  <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                  
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-purple-200 to-blue-200 transform -translate-x-1/2"></div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 };

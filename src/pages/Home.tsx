@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import Services from '../components/Services';
+// AQUI A MUDANÇA: Importamos 'Services' a partir do diretório 'pages'
+import Services from './Services'; 
 import Testimonials from '../components/Testimonials';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -18,7 +19,7 @@ const Home: React.FC = () => {
     {
       icon: Users,
       title: "Experiência Comprovada",
-      description: "Mais de 500 profissionais atendidos com sucesso em diversas áreas e níveis hierárquicos."
+      description: "Mais de 100 profissionais atendidos com sucesso em diversas áreas e níveis hierárquicos."
     },
     {
       icon: Award,
@@ -75,6 +76,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* AQUI A MUDANÇA: Usamos o componente unificado sem a prop 'isPage' */}
       <Services />
       <Testimonials />
     </div>

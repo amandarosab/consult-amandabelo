@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <span className={`font-bold text-xl transition-colors ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
-              Carreira Plus
+              Consult Amanda Belo
             </span>
           </Link>
 

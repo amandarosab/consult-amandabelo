@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             </button>
             
             <button className="border-2 border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-              Agende uma Consulta
+              Agende uma conversa
             </button>
           </motion.div>
         </motion.div>

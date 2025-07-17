@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import About from './pages/About';
-import Services from './pages/Services';
+import Services from './pages/Services'; // A importação continua a mesma
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
@@ -56,7 +56,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sobre" element={<About />} />
-            <Route path="/servicos" element={<Services />} />
+            {/* AQUI A MUDANÇA: Adicionamos a prop 'isPage' */}
+            <Route path="/servicos" element={<Services isPage={true} />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contato" element={<Contact />} />
           </Routes>

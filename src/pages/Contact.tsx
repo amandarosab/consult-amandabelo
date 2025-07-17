@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import ContactForm from '../components/ContactForm';
-import { Mail, Linkedin, MapPin, Clock, Phone } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Phone } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -11,35 +11,27 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: "E-mail",
-      content: "contato@carreiraplus.com",
+      content: "amandabelo.contato@outlook.com",
       description: "Resposta em até 24 horas"
     },
     {
       icon: Phone,
       title: "WhatsApp",
-      content: "(11) 99999-9999",
-      description: "Atendimento de seg. à sex."
+      content: "(11) 97348-3811",
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      content: "/in/carreiraplus",
+      content: "in/amandarbelo-hrbp",
       description: "Conecte-se conosco"
     },
     {
       icon: MapPin,
       title: "Localização",
-      content: "São Paulo, Brasil",
+      content: "Itaquaquecetuba - SP, Brasil",
       description: "Atendimento online"
     }
   ];
-
-  const workingHours = [
-    { day: "Segunda à Sexta", hours: "9:00 - 18:00" },
-    { day: "Sábado", hours: "9:00 - 14:00" },
-    { day: "Domingo", hours: "Fechado" }
-  ];
-
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -109,22 +101,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Working Hours */}
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                  <Clock className="h-5 w-5 mr-2 text-purple-600" />
-                  Horário de Atendimento
-                </h4>
-                <div className="space-y-3">
-                  {workingHours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between items-center">
-                      <span className="text-gray-600">{schedule.day}</span>
-                      <span className="font-medium text-gray-900">{schedule.hours}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* CTA Card */}
               <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-xl text-white">
                 <h4 className="text-xl font-bold mb-2">Precisa de uma resposta rápida?</h4>
@@ -139,7 +115,6 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

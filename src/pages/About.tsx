@@ -7,9 +7,9 @@ const About: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   const achievements = [
-    { icon: Users, number: "500+", label: "Profissionais Atendidos" },
+    { icon: Users, number: "100+", label: "Profissionais Atendidos" },
     { icon: Award, number: "95%", label: "Taxa de Sucesso" },
-    { icon: Clock, number: "5+", label: "Anos de Experiência" },
+    { icon: Clock, number: "6+", label: "Anos de Experiência" },
     { icon: Heart, number: "100%", label: "Dedicação" }
   ];
 
@@ -44,9 +44,9 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-                alt="Consultant"
-                className="rounded-2xl shadow-2xl"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFVprX3ZRURVlH2vm1A4k5_i5iUpCIp2BRYzXefr-nxxc2Y-mKLUy-zsavhm6oXttIy2ATLYaMxN8GiL1Bm47-I0j1q30vv5BqxbXoyLenqDkO-F8arbfGGGR6StETQE1CMowRQr7Fd4GgkB1GBib0YsaDe1Jam38hpxjl-y4Uc-AjoDY_DlgsBEgFx8s/w604-h604/5.png"
+                alt="Foto da CEO"
+                className="rounded-4xl shadow-4xl"
               />
             </motion.div>
 
