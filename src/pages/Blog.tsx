@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
 
 const Blog: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -16,20 +16,23 @@ const Blog: React.FC = () => {
 
   useEffect(() => {
     if (!SPACE_ID || !ACCESS_TOKEN) {
-      setError("ERRO: As variáveis de ambiente do Contentful não foram encontradas.");
-      setIsLoading(false); return;
+      setError("ERRO: As chaves da API do Contentful não foram encontradas. Verifique o seu arquivo .env.local e reinicie o servidor.");
+      setIsLoading(false);
+      return;
     }
     
-    // --- MUDANÇA PRINCIPAL AQUI ---
-    // Adicionamos '&include=1' ao final do URL para incluir os dados das imagens.
+    // Pedimos ao Contentful para incluir os dados das imagens (include=1)
     const apiUrl = `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}&content_type=post&include=1`;
 
     const fetchPosts = async () => {
       try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        if (!response.ok || data.sys?.type === 'Error') { throw new Error(data.message || 'Falha ao buscar os posts.'); }
-        
+
+        if (!response.ok || data.sys?.type === 'Error') {
+          throw new Error(data.message || 'Falha ao buscar os posts. Verifique as chaves da API e o Space ID.');
+        }
+
         const assets = data.includes?.Asset || [];
         const formattedPosts = data.items.map((item: any) => {
           const imageAsset = assets.find((asset: any) => asset.sys.id === item.fields.image?.sys?.id);
@@ -41,9 +44,10 @@ const Blog: React.FC = () => {
             image: imageAsset?.fields?.file?.url ? `https:${imageAsset.fields.file.url}` : '',
           };
         });
+
         setBlogPosts(formattedPosts);
       } catch (err: any) {
-        setError(`ERRO CAPTURADO: ${err.message}`);
+        setError(err.message);
       } finally {
         setIsLoading(false);
       }
@@ -51,19 +55,26 @@ const Blog: React.FC = () => {
     fetchPosts();
   }, [SPACE_ID, ACCESS_TOKEN]);
 
-  if (isLoading) return <div className="text-center py-40">A carregar posts...</div>;
-  if (error) return <div className="text-center py-40 text-red-500">Erro: {error}</div>;
-  if (blogPosts.length === 0) return <div className="text-center py-40"><h2 className="text-2xl font-bold">Nenhum post encontrado.</h2></div>;
-
+  // Lógica de filtro simplificada
   const filteredPosts = activeCategory === "Todos"
     ? blogPosts
     : blogPosts.filter(post => post.category === activeCategory);
   
   const categories = ["Todos", "LinkedIn", "Entrevistas", "Carreira", "Tendências", "Networking", "Desenvolvimento"];
 
+  // Se estiver a carregar, mostra uma mensagem.
+  if (isLoading) {
+    return <div className="text-center py-40">A carregar posts do Contentful...</div>;
+  }
+
+  // Se houver um erro, mostra o erro.
+  if (error) {
+    return <div className="text-center py-40 text-red-500">Erro: {error}</div>;
+  }
+  
   return (
     <div className="pt-20">
-      {/* Hero Section */}
+      {/* Secção do Cabeçalho */}
       <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -82,7 +93,7 @@ const Blog: React.FC = () => {
         </div>
       </section>
 
-      {/* Categories Filter */}
+      {/* Secção dos Filtros */}
       <section className="py-8 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 justify-center">
@@ -103,7 +114,7 @@ const Blog: React.FC = () => {
         </div>
       </section>
       
-      {/* Blog Posts Grid */}
+      {/* Secção dos Artigos */}
       <section ref={ref} className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -111,56 +122,58 @@ const Blog: React.FC = () => {
               Artigos <span className="text-purple-600">Recentes</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post, index) => (
-              <motion.article
-                key={post.title + index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
-              >
-                {post.image && (
-                  <div className="relative">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 left-4 bg-white bg-opacity-90 text-gray-700 px-2 py-1 rounded text-sm font-medium">
-                      {post.category}
+
+          {/* Verificação Final: Se não houver posts após o filtro, mostra uma mensagem */}
+          {filteredPosts.length === 0 ? (
+            <div className="text-center text-gray-500">
+              <p>Nenhum artigo encontrado para a categoria selecionada.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post, index) => (
+                <motion.article
+                  key={post.title + index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
+                >
+                  {post.image && (
+                    <div className="relative">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between text-gray-500 text-xs mb-4">
-                    <div className="flex items-center">
+                  )}
+                  <div className="p-6">
+                    <span className="text-sm text-purple-600 font-semibold">{post.category}</span>
+                    <h3 className="text-xl font-bold text-gray-900 my-2 group-hover:text-purple-600 transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center text-gray-500 text-xs mb-4">
                       <Calendar className="h-3 w-3 mr-1" />
                       <span>{new Date(post.date).toLocaleDateString('pt-BR')}</span>
                     </div>
+                    <button className="text-purple-600 font-semibold hover:text-purple-700 transition-colors flex items-center space-x-1 text-sm">
+                      <span>Ler mais</span>
+                      <ArrowRight className="h-3 w-3" />
+                    </button>
                   </div>
-                  <button className="text-purple-600 font-semibold hover:text-purple-700 transition-colors flex items-center space-x-1 text-sm">
-                    <span>Ler mais</span>
-                    <ArrowRight className="h-3 w-3" />
-                  </button>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+                </motion.article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Secção da Newsletter */}
       <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* ... */}
-        </div>
+        {/* ... */}
       </section>
     </div>
   );

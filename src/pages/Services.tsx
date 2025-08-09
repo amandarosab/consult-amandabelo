@@ -1,36 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { CheckCircle, ArrowRight, Star, Clock, Users } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
-// Adicionamos uma interface para as props do componente
 interface ServicesProps {
-  isPage?: boolean; // Prop para controlar se é a página completa ou uma secção
+  isPage?: boolean;
 }
 
 const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
   const { ref, isVisible } = useScrollAnimation();
+  
+  const whatsappNumber = "5511973483811";
 
   const services = [
     {
+      id: "otimizacao-linkedin",
       title: "Otimização Estratégica de LinkedIn",
       price: "R$ 80,00",
-      description: "Aumente sua visibilidade para recrutadores e transforme seu perfil em uma poderosa ferramenta de marketing pessoal. Otimização completa para você atrair as melhores oportunidades.",
+      description: "Aumente sua visibilidade para recrutadores e transforme seu perfil em uma poderosa ferramenta de marketing pessoal.",
       highlights: [
         "Título com palavras-chave",
-        "Reescrita do 'Sobre' com foco em narrativa",
-        "Otimização das experiências com foco em resultados",
-        "Configuração estratégica do perfil"
+        "Reescrita do 'Sobre' com foco na sua narrativa profissional",
+        "Otimização das suas experiências com foco em resultados",
+        "Configuração estratégica do seu perfil"
       ],
       duration: "2-3 dias úteis",
       includes: "Análise completa + Reescrita + Revisão",
-      color: "from-purple-500 to-purple-600",
-      popular: false
+      popular: true
     },
     {
+      id: "otimizacao-curriculo",
       title: "Otimização de Currículo (Foco em ATS)",
       price: "R$ 60,00",
-      description: "Garanta que seu currículo passe pelos filtros automáticos (ATS) e chegue às mãos dos recrutadores. Um CV preparado para gerar mais entrevistas.",
+      description: "Garanta que seu currículo passe pelos filtros automáticos (ATS) e chegue às mãos dos recrutadores.",
       highlights: [
         "Formato otimizado para softwares e humanos",
         "Inserção de palavras-chave estratégicas",
@@ -39,13 +41,13 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
       ],
       duration: "1-2 dias úteis",
       includes: "Reformulação completa + Template profissional",
-      color: "from-green-500 to-green-600",
       popular: true
     },
     {
+      id: "preparacao-entrevistas",
       title: "Preparação para Entrevista Comportamental",
-      price: "R$ 75,00",
-      description: "Desenvolva confiança e aprenda a responder de forma estratégica, comunicando seu valor de forma clara e convincente em uma sessão de simulação prática.",
+      price: "R$ 90,00",
+      description: "Desenvolva confiança e aprenda a responder de forma estratégica, comunicando seu valor de forma clara.",
       highlights: [
         "Simulação individual online",
         "Aplicação de técnicas de storytelling",
@@ -54,28 +56,28 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
       ],
       duration: "1 sessão de 90min",
       includes: "Simulação + Feedback + Material de apoio",
-      color: "from-blue-500 to-blue-600",
       popular: false
     },
     {
+      id: "preparacao-entrevista-tecnica",
       title: "Preparação para Entrevista Técnica",
-      price: "R$ 85,00",
-      description: "Demonstre sua expertise com segurança e articule seu raciocínio técnico de forma eficaz. Prepare-se para desafios práticos, estudos de caso e live coding.",
+      price: "R$ 95,00",
+      description: "Demonstre sua expertise com segurança e articule seu raciocínio técnico de forma eficaz.",
       highlights: [
-        "Sessão focada em temas da sua área",
-        "Simulação de desafios reais do mercado",
-        "Estratégias para comunicar conhecimento",
-        "Preparação para live coding"
+          "Sessão focada em temas da sua área",
+          "Simulação de desafios reais do mercado",
+          "Estratégias para comunicar conhecimento",
+          "Preparação para live coding"
       ],
       duration: "1 sessão de 120min",
       includes: "Simulação + Desafios práticos + Feedback técnico",
-      color: "from-indigo-500 to-indigo-600",
       popular: false
     },
     {
+      id: "mentoria-carreira",
       title: "Mentoria de Carreira Personalizada",
       price: "R$ 120,00",
-      description: "Um programa individual para mapear seus objetivos e criar um plano de ação claro para acelerar sua carreira. Ideal para quem busca clareza, transição de área ou superar a estagnação.",
+      description: "Um programa individual para mapear seus objetivos e criar um plano de ação claro para acelerar sua carreira.",
       highlights: [
         "Processo estruturado com diagnóstico de carreira",
         "Análise SWOT personalizada",
@@ -84,41 +86,15 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
       ],
       duration: "2 sessões de 90min",
       includes: "Diagnóstico + Plano de ação + Acompanhamento",
-      color: "from-purple-500 to-pink-500",
-      popular: true
-    }
-  ];
-
-  const processSteps = [
-    {
-      step: "01",
-      title: "Análise Inicial",
-      description: "Avaliamos seu perfil atual e identificamos oportunidades de melhoria."
-    },
-    {
-      step: "02",
-      title: "Estratégia Personalizada",
-      description: "Desenvolvemos um plano específico para seus objetivos e área de atuação."
-    },
-    {
-      step: "03",
-      title: "Implementação",
-      description: "Aplicamos as melhorias e otimizações com foco em resultados."
-    },
-    {
-      step: "04",
-      title: "Acompanhamento",
-      description: "Monitoramos os resultados e fazemos ajustes quando necessário."
+      popular: false
     }
   ];
 
   return (
-    // Adiciona padding superior apenas quando for a página completa
     <div className={isPage ? "pt-20" : ""}>
       
-      {/* Hero Section - Renderiza apenas se 'isPage' for verdadeiro */}
       {isPage && (
-        <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-800">
+        <section className="py-20 bg-purple-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -127,127 +103,99 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
               className="text-center text-white"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Nossos <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">Serviços</span>
+                Serviços
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-                Soluções personalizadas para impulsionar sua carreira e conquistar as melhores oportunidades
+              <p className="text-xl md:text-1xl text-purple-200 max-w-2xl mx-auto">
+                Quero te ajudar a conquistar melhores oportunidades de carreira!
               </p>
             </motion.div>
           </div>
         </section>
       )}
 
-      {/* Services Grid - Esta secção será sempre visível */}
       <section ref={ref} className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group relative ${
-                  service.popular ? 'ring-2 ring-green-500' : ''
-                }`}
-              >
-                {service.popular && (
-                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
-                    <Star className="h-3 w-3 mr-1" />
-                    Popular
-                  </div>
-                )}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8">
+            {services.map((service, index) => {
+              const isPopular = service.popular;
+              const ringColor = isPopular ? 'ring-brand-green' : 'ring-gray-200';
+              const textColor = isPopular ? 'text-brand-green' : 'text-purple-700';
+              const buttonBgColor = isPopular ? 'bg-brand-green' : 'bg-purple-700';
+              
+              const whatsappMessage = `Olá! Quero saber como contratar o serviço: ${service.title}`;
+              const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-                <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
-                
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors pr-4">
-                      {service.title}
-                    </h3>
-                    <span className={`text-2xl font-bold bg-gradient-to-r ${service.color} bg-clip-text text-transparent whitespace-nowrap`}>
-                      {service.price}
-                    </span>
-                  </div>
-
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  <div className="space-y-3 mb-6">
-                    <h4 className="font-semibold text-gray-900">Destaques:</h4>
-                    {service.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm">{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-3 mb-8 text-sm text-gray-600">
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2 text-gray-400" />
-                      <span>Prazo: {service.duration}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Users className="h-4 w-4 mr-2 text-gray-400" />
-                      <span>Inclui: {service.includes}</span>
-                    </div>
-                  </div>
-
-                  <button className={`w-full bg-gradient-to-r ${service.color} text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center justify-center space-x-2`}>
-                    <span>Contratar Serviço</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section - Renderiza apenas se 'isPage' for verdadeiro */}
-      {isPage && (
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Como <span className="text-purple-600">Trabalhamos</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Um processo estruturado e eficiente para garantir os melhores resultados
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
+              return (
                 <motion.div
+                  id={service.id}
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="text-center relative"
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className={`bg-white rounded-2xl ring-1 ${ringColor} shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:ring-2`}
                 >
-                  <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">
-                    {step.step}
+                  <div className="p-8">
+                    {/* MUDANÇA: 'items-stretch' força as colunas a terem a mesma altura */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                      
+                      {/* Coluna 1: Título e Descrição */}
+                      <div className="md:col-span-1">
+                        {isPopular && (
+                          <span className="inline-block bg-brand-green text-white px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                            Popular
+                          </span>
+                        )}
+                        <h3 className={`text-2xl font-bold ${textColor}`}>
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 mt-2 text-sm">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      {/* Coluna 2: Destaques */}
+                      <div className="md:col-span-1">
+                        <h4 className="font-semibold text-gray-800 mb-3">Destaques:</h4>
+                        <ul className="space-y-2">
+                          {service.highlights.map((highlight, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <CheckCircle className="h-5 w-5 text-brand-green mt-0.5 flex-shrink-0 mr-2" />
+                              <span className="text-gray-700 text-sm">{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Coluna 3: Preço e Botão */}
+                      {/* MUDANÇA: Adicionamos flexbox para controlar o alinhamento interno */}
+                      <div className="md:col-span-1 text-center md:text-right flex flex-col justify-between">
+                        <div>
+                            <p className={`text-4xl font-bold ${textColor} mb-4`}>{service.price}</p>
+                            <div className="text-sm text-gray-500 mb-4">
+                            <p>{service.duration}</p>
+                            <p>{service.includes}</p>
+                            </div>
+                        </div>
+                        <a 
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-block w-full ${buttonBgColor} text-center text-white py-3 rounded-lg font-semibold transition-transform duration-300 transform hover:scale-105`}
+                        >
+                          Contratar serviço
+                        </a>
+                      </div>
+
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                  
-                  {index < processSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-purple-200 to-blue-200 transform -translate-x-1/2"></div>
-                  )}
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
+      
+      {/* ... */}
     </div>
   );
 };
