@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               <a href="https://www.linkedin.com/in/amandarbelo-hrbp/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com/seu-usuario-aqui" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition-colors">
+              <a href="https://instagram.com/consult.amandabelo" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
