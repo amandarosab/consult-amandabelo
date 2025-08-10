@@ -103,7 +103,7 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
               className="text-center text-white"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Serviços
+                Nossos serviços
               </h1>
               <p className="text-xl md:text-1xl text-purple-200 max-w-2xl mx-auto">
                 Quero te ajudar a conquistar melhores oportunidades de carreira!

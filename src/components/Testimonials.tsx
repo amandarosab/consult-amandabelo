@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Star, Quote } from 'lucide-react';
 
 const Testimonials: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
-  // MUDANÇA: A lista de depoimentos foi preenchida com todos os itens.
+  // MUDANÇA: Lista completa com todos os seus depoimentos
   const testimonials = [
     {
       name: "Gabriely Rodrigues",
@@ -83,14 +83,8 @@ const Testimonials: React.FC = () => {
     },
   ];
 
-  // MUDANÇA: Adicionamos as funções de navegação
-  const showNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
-  const showPrevious = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  };
+  const itemsPerPage = 3;
+  const numPages = Math.ceil(testimonials.length / itemsPerPage);
 
   return (
     <section 
@@ -98,68 +92,99 @@ const Testimonials: React.FC = () => {
       ref={ref} 
       className="py-20 bg-purple-700"
     >
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-4xl font-bold text-white">
             Histórias reais de transformação e sucesso
           </h2>
         </motion.div>
 
-        <div className="relative flex items-center justify-center max-w-lg mx-auto">
-          <div className="w-full h-[450px] relative"> 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0 w-full h-full"
-              >
-                <div className="bg-white bg-opacity-95 text-gray-800 rounded-2xl p-8 shadow-xl flex flex-col h-full">
-                  <div className="flex items-center mb-4">
-                    <Quote className="h-8 w-8 text-purple-500 opacity-50" />
-                  </div>
-                  <p className="text-gray-700 text-base leading-relaxed mb-4 italic flex-grow">
-                    "{testimonials[activeIndex].content}"
-                  </p>
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <div className="flex items-center">
-                    <img
-                      src={testimonials[activeIndex].image}
-                      alt={testimonials[activeIndex].name}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{testimonials[activeIndex].name}</h4>
-                      <p className="text-gray-600 text-sm">{testimonials[activeIndex].role}</p>
-                      <p className="text-gray-500 text-xs">{testimonials[activeIndex].company}</p>
-                    </div>
-                  </div>
+        {/* Visualização para Telemóvel (Carrossel de Arrastar) */}
+        <div className="md:hidden flex overflow-x-auto space-x-6 pb-8">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-4/5 bg-white bg-opacity-95 text-gray-800 rounded-2xl p-8 shadow-xl flex flex-col"
+            >
+              <div className="flex items-center mb-6">
+                <Quote className="h-8 w-8 text-purple-500 opacity-50" />
+              </div>
+              <p className="text-gray-700 text-lg leading-relaxed mb-6 italic flex-grow">
+                "{testimonial.content}"
+              </p>
+              <div className="flex items-center mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <div className="flex items-center">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  <p className="text-gray-500 text-xs">{testimonial.company}</p>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Visualização para Computador (Grelha Paginada) */}
+        <div className="hidden md:grid md:grid-cols-3 md:gap-8">
+          {testimonials.slice(currentPage * itemsPerPage, (currentPage * itemsPerPage) + itemsPerPage).map((testimonial, index) => (
+            <motion.div
+              key={currentPage * itemsPerPage + index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="bg-white bg-opacity-95 text-gray-800 rounded-2xl p-8 shadow-xl flex flex-col"
+            >
+              <div className="flex items-center mb-6">
+                <Quote className="h-8 w-8 text-purple-500 opacity-50" />
+              </div>
+              <p className="text-gray-700 text-lg leading-relaxed mb-6 italic flex-grow">
+                "{testimonial.content}"
+              </p>
+              <div className="flex items-center mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <div className="flex items-center">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  <p className="text-gray-500 text-xs">{testimonial.company}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
         
-        <div className="flex justify-center mt-8 space-x-2">
-          {testimonials.map((_, index) => (
+        {/* Navegação por pontos (visível apenas no computador) */}
+        <div className="hidden md:flex justify-center mt-12 space-x-3">
+          {Array.from({ length: numPages }).map((_, pageIndex) => (
             <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
+              key={pageIndex}
+              onClick={() => setCurrentPage(pageIndex)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                activeIndex === index ? 'bg-white' : 'bg-white bg-opacity-40'
+                currentPage === pageIndex ? 'bg-white' : 'bg-white bg-opacity-40'
               }`}
-              aria-label={`Ir para o depoimento ${index + 1}`}
+              aria-label={`Ir para a página de depoimentos ${pageIndex + 1}`}
             />
           ))}
         </div>
