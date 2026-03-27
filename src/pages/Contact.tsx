@@ -10,8 +10,8 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: "WhatsApp",
-      content: "(11) 97348-3811",
-      link: `https://wa.me/5511973483811?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre os serviços de carreira.")}`
+      content: "(11) 91062-3871",
+      link: `https://wa.me/5511910623871?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre os serviços de carreira.")}`
     },
     {
       icon: Linkedin,

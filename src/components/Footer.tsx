@@ -3,7 +3,7 @@ import { Mail, Linkedin, MapPin, Instagram, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const whatsappUrl = `https://wa.me/5511973483811?text=${encodeURIComponent("Olá! Vi seu site e gostaria de mais informações.")}`;
+  const whatsappUrl = `https://wa.me/5511910623871?text=${encodeURIComponent("Olá! Vi seu site e gostaria de mais informações.")}`;
   const emailUrl = "mailto:amandabelo.contato@outlook.com";
 
   return (
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
               {/* WhatsApp clicável */}
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">(11) 97348-3811</a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">(11) 91062-3871</a>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />

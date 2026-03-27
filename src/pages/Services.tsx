@@ -10,13 +10,13 @@ interface ServicesProps {
 const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
   const { ref, isVisible } = useScrollAnimation();
   
-  const whatsappNumber = "5511973483811";
+  const whatsappNumber = "5511910623871";
 
   const services = [
     {
       id: "otimizacao-linkedin",
-      title: "Otimização Estratégica de LinkedIn",
-      price: "R$ 80,00",
+      title: "Otimização estratégica de LinkedIn",
+      price: "R$ 90,00",
       description: "Aumente sua visibilidade para recrutadores e transforme seu perfil em uma poderosa ferramenta de marketing pessoal.",
       highlights: [
         "Título com palavras-chave",
@@ -30,8 +30,8 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
     },
     {
       id: "otimizacao-curriculo",
-      title: "Otimização de Currículo (Foco em ATS)",
-      price: "R$ 60,00",
+      title: "Otimização de currículo (Foco em ATS)",
+      price: "R$ 95,00",
       description: "Garanta que seu currículo passe pelos filtros automáticos (ATS) e chegue às mãos dos recrutadores.",
       highlights: [
         "Formato otimizado para softwares e humanos",
@@ -45,8 +45,8 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
     },
     {
       id: "preparacao-entrevistas",
-      title: "Preparação para Entrevista Comportamental",
-      price: "R$ 90,00",
+      title: "Preparação para entrevista comportamental",
+      price: "R$ 95,00",
       description: "Desenvolva confiança e aprenda a responder de forma estratégica, comunicando seu valor de forma clara.",
       highlights: [
         "Simulação individual online",
@@ -60,8 +60,8 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
     },
     {
       id: "preparacao-entrevista-tecnica",
-      title: "Preparação para Entrevista Técnica",
-      price: "R$ 95,00",
+      title: "Preparação para entrevista técnica",
+      price: "R$ 110,00",
       description: "Demonstre sua expertise com segurança e articule seu raciocínio técnico de forma eficaz.",
       highlights: [
           "Sessão focada em temas da sua área",
@@ -75,9 +75,9 @@ const Services: React.FC<ServicesProps> = ({ isPage = false }) => {
     },
     {
       id: "mentoria-carreira",
-      title: "Mentoria de Carreira Personalizada",
-      price: "R$ 120,00",
-      description: "Um programa individual para mapear seus objetivos e criar um plano de ação claro para acelerar sua carreira.",
+      title: "Mentoria de carreira personalizada (EM PAUSA)",
+      price: "R$ 140,00",
+      description: "Sessão individual para mapear seus objetivos e criar um plano de ação claro para acelerar sua carreira.",
       highlights: [
         "Processo estruturado com diagnóstico de carreira",
         "Análise SWOT personalizada",
