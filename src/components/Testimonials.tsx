@@ -18,6 +18,14 @@ const Testimonials: React.FC = () => {
       image: "https://media.licdn.com/dms/image/v2/D4D03AQEjD2gGw4rWrw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718255222931?e=1755734400&v=beta&t=CXlT_0vmAXm4SBsheLgBjh7-e7xxNFTBlZ8ynisvdoA"
     },
     {
+      name: "Monik Rangel",
+      role: "Product manager",
+      company: "Digix",
+      content: "Amanda foi incrível, trouxe uma análise completa que me ajudou a desenvolver meu case e ir para entrevista muito mais preparada! Já indiquei pra várias amigas",
+      rating: 5,
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQFL6DcqSrVt6w/profile-displayphoto-shrink_400_400/B4DZVi8I1HGcAg-/0/1741121688023?e=1776297600&v=beta&t=lbtRCY4uNGk1RmfcwxWP38JpKHp3jH0qPrPPXnTv5mg"
+    },
+    {
       name: "Ingrid Moraes",
       role: "Analista administrativa e financeira",
       company: "Elo Editora",
