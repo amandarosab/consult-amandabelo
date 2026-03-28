@@ -7,8 +7,23 @@ const Testimonials: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [currentPage, setCurrentPage] = useState(0);
 
-  // MUDANÇA: Lista completa com todos os seus depoimentos
   const testimonials = [
+    {
+      name: "Shaymon Alvarez",
+      role: "Desenvolvedor de software embarcado",
+      company: "Stellantis",
+      content: "Profissional focada e assertiva sempre em busca da excelência em seus trabalhos. Recomendo fortemente seus serviços!",
+      rating: 5,
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQEkBqiM4yROwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727722100798?e=1776297600&v=beta&t=eCRvZkiYIOeJs2-nty6zR7msYJ5Igruzg0nkzIvZXFg/dms/image/v2/D4D03AQEkBqiM4yROwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727722100798?e=1755734400&v=beta&t=Xa0_anBmFpIpI77ZLYLdxWnXNrWhodDRckFTVUorxGU"
+    },
+     {
+      name: "Julis Araujo",
+      role: "Engenheiro de software",
+      company: "Bcodex",
+      content: "O trabalho da Amanda me deu resultado imediato. No dia seguinte aos ajustes dela em meu LinkedIn já comecei a receber novas propostas (inclusive internacionais). Valeu a pena demais!",
+      rating: 5,
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQGH34NrzHxpPw/profile-displayphoto-scale_400_400/B4DZi_h73bH0Ag-/0/1755560001560?e=1776297600&v=beta&t=R2uSuxFmhorf7u53ymheY-6ypm158hHcVG457yd_Bro"
+    },
     {
       name: "Gabriely Rodrigues",
       role: "Advogada",
@@ -26,28 +41,12 @@ const Testimonials: React.FC = () => {
       image: "https://media.licdn.com/dms/image/v2/D4D03AQFL6DcqSrVt6w/profile-displayphoto-shrink_400_400/B4DZVi8I1HGcAg-/0/1741121688023?e=1776297600&v=beta&t=lbtRCY4uNGk1RmfcwxWP38JpKHp3jH0qPrPPXnTv5mg"
     },
     {
-      name: "Ingrid Moraes",
-      role: "Analista administrativa e financeira",
-      company: "Elo Editora",
-      content: "A Amanda é muito atenciosa e rápida. Super recomendo",
+      name: "Jackson Miranda",
+      role: "Especialista em infraestrutura e TI",
+      company: "Sonda",
+      content: "As sugestões fizeram total sentido, melhorias práticas para deixar meu perfil mais estratégico e atrativo. Agradeço pelo cuidado e pela qualidade do seu trabalho!",
       rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4E03AQEN9gv6WlW2mw/profile-displayphoto-shrink_400_400/B4EZcU7SsiHsAg-/0/1748402777455?e=1755734400&v=beta&t=Hm8W7ShQ6CQRCaZyjxWDpK5Oxs2TLZ3d96bKFENASWg"
-    },
-    {
-      name: "Mario Santos",
-      role: "Engenheiro de dados",
-      company: "FPFtech",
-      content: "Simplesmente sensacional, direta ao ponto, sabe se comunicar bem e realmente agregou muito, recomendo demais o trabalho dela.",
-      rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/C5603AQGLNoclVrsylw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1600044857459?e=1755734400&v=beta&t=FOdgqrdmJbH6lYBgy2Kls7R-o7QmYovWhCVJFHBQVGM"
-    },
-    {
-      name: "Shaymon Alvarez",
-      role: "Desenvolvedor de software embarcado",
-      company: "Stellantis",
-      content: "Profissional focada e assertiva sempre em busca da excelência em seus trabalhos. Recomendo fortemente seus serviços!",
-      rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQEkBqiM4yROwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727722100798?e=1755734400&v=beta&t=Xa0_anBmFpIpI77ZLYLdxWnXNrWhodDRckFTVUorxGU"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQHa1inZ3PYi9g/profile-displayphoto-scale_400_400/B4DZnqO8TBGQAg-/0/1760571410249?e=1776297600&v=beta&t=X9Ll3mSNCbdFUjYFC5q4_h7AVNenCiGMLhHrmQDGu1I"
     },
     {
       name: "Gilcllys Costa",
@@ -55,31 +54,15 @@ const Testimonials: React.FC = () => {
       company: "John Deere",
       content: "Responde rapidamente e sempre preocupada com o cliente perguntando se ele quer mais alguma alteração. Entregou tudo o que prometeu. Super indico o serviço dela, me entregou hoje tudo o que foi acordado no serviço!",
       rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1755734400&v=beta&t=6U_C1HrsPTtBz5Q2dCSrjAecXfgLzEUcXUmFTxz6Gqg"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1776297600&v=beta&t=w-jZAv0arq2hUgPq-DH5GtcFCT5unFtwk24-4WRFx8s://media.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1776297600&v=beta&t=w-jZAv0arq2hUgPq-DH5GtcFCT5unFtwk24-4WRFx8sa.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1755734400&v=beta&t=6U_C1HrsPTtBz5Q2dCSrjAecXfgLzEUcXUmFTxz6Gqg"
     },
     {
-      name: "Jeano Belo Dourado",
-      role: "Instrutor de Power BI",
-      company: "BI Solução",
-      content: "Estou extremamente satisfeito com o excelente trabalho que a Amanda realizou para mim. Com sua dedicação, habilidade e compromisso, ela transformou completamente meu LinkedIn e currículo.",
+      name: "Yasmin Bueno",
+      role: "Executiva de vendas",
+      company: "GL Events",
+      content: "Estou grata por toda a atenção durante a prestação de serviços da Amanda, ela demonstrou muito conhecimento e domínio no assunto, e, ainda mais importante, seus serviços já mostraram resultados positivos!",
       rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1755734400&v=beta&t=tgC_ibY2GO_8GTdnxWpqHDcaBfauE85QfNgRaqy9NkI"
-    },
-    {
-      name: "Alanna Gabriele da Silva",
-      role: "Engenheira",
-      company: "Autônoma",
-      content: "Adorei a Amanda, super atenciosa e tive um retorno do meu currículo quase que imediato, em apenas dois dias fui chamada para uma entrevista na área que eu quero. Adorei, recomendo!",
-      rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGXm445p5MWmw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719944484277?e=1755734400&v=beta&t=V3SPN1SBcJg3jHaMYBamv3UvY4VTErXbBxBtGosKIi4"
-    },
-    {
-      name: "Carlos Eduardo Fiuza",
-      role: "Engenheiro de software",
-      company: "Bcodex",
-      content: "Atendimento profissional e dedicado, após aplicação das dicas o resultado foi quase imediato!",
-      rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQFOb3zWc-ZwJw/profile-displayphoto-shrink_400_400/B4DZXawBMqHwAg-/0/1743131776560?e=1755734400&v=beta&t=G2yDfTy7M3s_iEnl5PPlkpPCA2gL1GP7MM-MLZEtvhU"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQHlUsKdULyyyA/profile-displayphoto-scale_400_400/B4DZld37K2JQAg-/0/1758216567134?e=1776297600&v=beta&t=SaUqU0URTx3oZPy7bLw5Zm_z59ky9JFGTIsjpcoE27M"
     },
     {
       name: "Pedro Brantis",
@@ -87,7 +70,39 @@ const Testimonials: React.FC = () => {
       company: "FPFtech",
       content: "O trabalho dela é ágil e eficaz, tive retornos muito rápido com seus serviços",
       rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGSOxYo4GoLhQ/profile-displayphoto-shrink_400_400/B4DZcU2HwUHMAg-/0/1748401421872?e=1755734400&v=beta&t=d09rK45hooOJGgv85SjEi7oKd2hL31FzwQH7iTWeRaU"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQGSOxYo4GoLhQ/profile-displayphoto-shrink_400_400/B4DZcU2HwUHMAg-/0/1748401421872?e=1776297600&v=beta&t=toIiohfuq4yiGdcRrqj7yUIvtK51sBH_gOFklro9mGk"
+    },
+    {
+      name: "Jeano Belo Dourado",
+      role: "Instrutor de Power BI",
+      company: "BI Solução",
+      content: "Estou extremamente satisfeito com o excelente trabalho que a Amanda realizou para mim. Com sua dedicação, habilidade e compromisso, ela transformou completamente meu LinkedIn e currículo.",
+      rating: 5,
+      image: "https://media.licdn.com/dms/https://media.licdn.com/dms/image/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1776297600&v=beta&t=UTbTi_dxtyQJO4AeP0AiCATLuSD_-ehrZeScFK8v4HM/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1755734400&v=beta&t=tgC_ibY2GO_8GTdnxWpqHDcaBfauE85QfNgRaqy9NkI"
+    },
+    {
+      name: "Carlos Eduardo Fiuza",
+      role: "Engenheiro de software",
+      company: "Bcodex",
+      content: "Atendimento profissional e dedicado, após aplicação das dicas o resultado foi quase imediato!",
+      rating: 5,
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQG_h2-r2IyZcQ/profile-displayphoto-scale_400_400/B4DZzzavkmIkAg-/0/1773610401886?e=1776297600&v=beta&t=xKXq4nNirBOnkbbTEn7nM96xxj-MbrIY0uC1OUqTij0"
+    },
+     {
+      name: "Samuel Silva",
+      role: "Engenheiro de dados",
+      company: "INDT - Instituto de Desenvolvimento Tecnológico ",
+      content: "500 carácter são difíceis de dizer o quanto o que ela fez no meu perfil me ajudou a encontrar minha vaga, muito profissional e competente.",
+      rating: 5,
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQEW2Vm3zh-qnA/profile-displayphoto-scale_400_400/B4DZh7Lr5gH8Ag-/0/1754413318349?e=1776297600&v=beta&t=R6ylGlnfvLT_am9vn5vOkpCOSlLTuqNc8-KDN678X5w"
+    },
+    {
+      name: "Cauet Delfim",
+      role: "Técnico em manutenção de máquinas",
+      company: "SWM International",
+      content: "Foi excelente ótimo trabalho que ela fez no meu perfil",
+      rating: 5,
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQFVgUNVMsMeJg/profile-displayphoto-scale_400_400/B4DZgoc5eBHsAg-/0/1753025321577?e=1776297600&v=beta&t=m3K3f551berdebRvNzMdsIq9yP4Bj0gHoWltDbj1Mbo"
     },
   ];
 
