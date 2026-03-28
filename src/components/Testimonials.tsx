@@ -96,6 +96,14 @@ const Testimonials: React.FC = () => {
       rating: 5,
       image: "https://media.licdn.com/dms/image/v2/D4D03AQFVgUNVMsMeJg/profile-displayphoto-scale_400_400/B4DZgoc5eBHsAg-/0/1753025321577?e=1776297600&v=beta&t=m3K3f551berdebRvNzMdsIq9yP4Bj0gHoWltDbj1Mbo"
     },
+    {
+      name: "Matheus Freitas",
+      role: "Engenheiro de dados",
+      company: "Bradesco",
+      content: "Amanda é uma profissional sensacional, preocupada com cada detalhe e super ágil. Recomendo seus serviços",
+      rating: 5,
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQHwcrdH0zxIag/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718219398445?e=1776297600&v=beta&t=fOXsOd8oSk3DL4bJedoBgsA066AEFW1OmKLrHVeBAiw"
+    }
   ];
 
   const itemsPerPage = 3;
