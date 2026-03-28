@@ -62,29 +62,28 @@ const About: React.FC = () => {
               
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Há mais de 5 anos, descobri minha paixão por ajudar profissionais a alcançarem 
-                  seu verdadeiro potencial. Tudo começou quando percebi que muitos talentos 
-                  excepcionais estavam sendo negligenciados simplesmente por não saberem como 
-                  se posicionar no mercado.
+                  Há mais de 5 anos ajudo profissionais a alcançarem seu verdadeiro potencial. 
+                  Tudo começou quando percebi que muitos talentos estavam sendo negligenciados 
+                  por não saberem como se posicionar no mercado.
                 </p>
                 
                 <p>
-                  Com formação em Recursos Humanos e especialização em Gestão de Carreira, 
-                  desenvolvi metodologias únicas que combinam estratégia, psicologia e 
-                  marketing pessoal para criar perfis profissionais irresistíveis.
+                  Com formação em Recursos Humanos e especialização em Gestão Organizacional e 
+                  MBA em Liderança e Gestão de Pessoas, desenvolvi metodologias únicas que combinam estratégia, psicologia e 
+                  marketing pessoal para criar perfis de LinkedIn e currículos irresistíveis que abrem portas para as melhores oportunidades.
                 </p>
                 
                 <p>
                   Cada cliente que atendo reforça minha convicção de que, com a orientação 
-                  correta, qualquer pessoa pode transformar sua carreira e, consequentemente, 
-                  sua vida. É isso que me motiva todos os dias.
+                  correta, qualquer pessoa pode transformar sua carreira e consequentemente, 
+                  sua vida. É isso que me motiva todos os dias!
                 </p>
               </div>
 
               <div className="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl">
                 <p className="text-purple-800 font-semibold italic">
-                  "Acredito que cada pessoa tem um potencial único. Meu papel é ajudar 
-                  você a descobrir, desenvolver e comunicar esse potencial ao mundo."
+                  "Acredito que cada pessoa tem um potencial único. O meu papel é ajudar 
+                  você a descobrir, desenvolver e comunicar esse potencial para o mundo."
                 </p>
               </div>
             </motion.div>
