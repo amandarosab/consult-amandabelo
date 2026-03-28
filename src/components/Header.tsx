@@ -31,7 +31,6 @@ const Header: React.FC = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  // MUDANÇA: A lógica para determinar o link ativo foi corrigida
                   className={`font-semibold transition-colors text-sm tracking-wider ${
                     location.pathname + location.hash === item.href
                       ? 'text-purple-600'

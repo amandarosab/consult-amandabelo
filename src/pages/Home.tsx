@@ -13,22 +13,22 @@ const Home: React.FC = () => {
     {
       icon: Target,
       title: "Estratégia personalizada",
-      description: "Cada cliente recebe um plano único baseado em seus objetivos e perfil profissional."
+      description: "Cada cliente recebe um plano único baseado em seus objetivos e perfil profissional"
     },
     {
       icon: Users,
       title: "Experiência comprovada",
-      description: "Mais de 100 profissionais atendidos com sucesso em diversas áreas e níveis hierárquicos."
+      description: "Mais de 100 profissionais atendidos com sucesso em diversas áreas e níveis hierárquicos"
     },
     {
       icon: Award,
       title: "Resultados garantidos",
-      description: "95% dos nossos clientes conseguem melhores posições ou aumentos salariais em até 4 meses."
+      description: "95% dos clientes conseguem melhores posições ou aumentos salariais em até 4 meses"
     },
     {
       icon: TrendingUp,
       title: "Crescimento contínuo",
-      description: "Acompanhamento e suporte contínuo para garantir seu desenvolvimento profissional."
+      description: "Acompanhamento e suporte contínuo para garantir seu desenvolvimento profissional"
     }
   ];
 
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
     <div>
       <Hero />
       
-      {/* MUDANÇA: O espaçamento py-20 foi ajustado para aproximar a secção do topo */}
+      {}
       <section ref={ref} className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">

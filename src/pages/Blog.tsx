@@ -21,7 +21,6 @@ const Blog: React.FC = () => {
       return;
     }
     
-    // Pedimos ao Contentful para incluir os dados das imagens (include=1)
     const apiUrl = `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}&content_type=post&include=1`;
 
     const fetchPosts = async () => {
@@ -62,12 +61,12 @@ const Blog: React.FC = () => {
   
   const categories = ["Todos", "LinkedIn", "Entrevistas", "Carreira", "Tendências", "Networking", "Desenvolvimento"];
 
-  // Se estiver a carregar, mostra uma mensagem.
+  // Se estiver a carregar, mostra uma mensagem
   if (isLoading) {
     return <div className="text-center py-40">A carregar posts do Contentful...</div>;
   }
 
-  // Se houver um erro, mostra o erro.
+  // Se houver um erro, mostra o erro
   if (error) {
     return <div className="text-center py-40 text-red-500">Erro: {error}</div>;
   }

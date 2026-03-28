@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
       icon: Linkedin,
       title: "LinkedIn",
       content: "in/amandarbelo-hrbp",
-      link: "https://www.linkedin.com/in/amandarbelo-hrbp"
+      link: "https://www.linkedin.com/in/amandarbelo"
     },
     { icon: Mail,
       title: "E-mail",
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
   ];
 
   const workingHours = [
-    {day: "Segunda à sexta-feira", hours: "18:00 - 23:00" },
+    {day: "Segunda à sexta-feira", hours: "19:00 - 23:00" },
     {day: "Sábado", hours: "10:00 - 14:00" },
     {day: "Domingo", hours: "Fechado" }
   ];

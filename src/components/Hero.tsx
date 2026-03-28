@@ -6,7 +6,6 @@ const Hero: React.FC = () => {
   const { displayText } = useTypewriter("Impulsionando pessoas desde 2021!", 100);
 
   return (
-    // MUDANÇA: Removemos a altura fixa (h-[70vh]) e controlamos o tamanho com padding (pt- e pb-)
     <section className="bg-purple-700 flex items-center justify-center text-white text-center pt-32 pb-24 md:pt-48 md:pb-40">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
