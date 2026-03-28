@@ -14,7 +14,7 @@ const Testimonials: React.FC = () => {
       company: "Stellantis",
       content: "Profissional focada e assertiva sempre em busca da excelência em seus trabalhos. Recomendo fortemente seus serviços!",
       rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQEkBqiM4yROwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727722100798?e=1776297600&v=beta&t=eCRvZkiYIOeJs2-nty6zR7msYJ5Igruzg0nkzIvZXFg/dms/image/v2/D4D03AQEkBqiM4yROwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727722100798?e=1755734400&v=beta&t=Xa0_anBmFpIpI77ZLYLdxWnXNrWhodDRckFTVUorxGU"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQEkBqiM4yROwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727722100798?e=1776297600&v=beta&t=eCRvZkiYIOeJs2-nty6zR7msYJ5Igruzg0nkzIvZXFg"
     },
      {
       name: "Julis Araujo",
@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
       company: "Ibiaçu Loteamentos",
       content: "A Amanda demonstra expertise em sua área de atuação, além de ser extremamente simpática e profissional. O trabalho que ela fez com o meu Linkedin foi incrível. Super recomendo!",
       rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQEjD2gGw4rWrw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718255222931?e=1755734400&v=beta&t=CXlT_0vmAXm4SBsheLgBjh7-e7xxNFTBlZ8ynisvdoA"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQEjD2gGw4rWrw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718255222931?e=1776297600&v=beta&t=10YlF7v0Dww9xCB59JUVWrpsDzLcow5-oR-fdGfZCpU"
     },
     {
       name: "Monik Rangel",
@@ -54,7 +54,7 @@ const Testimonials: React.FC = () => {
       company: "John Deere",
       content: "Responde rapidamente e sempre preocupada com o cliente perguntando se ele quer mais alguma alteração. Entregou tudo o que prometeu. Super indico o serviço dela, me entregou hoje tudo o que foi acordado no serviço!",
       rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1776297600&v=beta&t=w-jZAv0arq2hUgPq-DH5GtcFCT5unFtwk24-4WRFx8s://media.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1776297600&v=beta&t=w-jZAv0arq2hUgPq-DH5GtcFCT5unFtwk24-4WRFx8sa.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1755734400&v=beta&t=6U_C1HrsPTtBz5Q2dCSrjAecXfgLzEUcXUmFTxz6Gqg"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1776297600&v=beta&t=w-jZAv0arq2hUgPq-DH5GtcFCT5unFtwk24-4WRFx8s"
     },
     {
       name: "Yasmin Bueno",
@@ -78,7 +78,7 @@ const Testimonials: React.FC = () => {
       company: "BI Solução",
       content: "Estou extremamente satisfeito com o excelente trabalho que a Amanda realizou para mim. Com sua dedicação, habilidade e compromisso, ela transformou completamente meu LinkedIn e currículo.",
       rating: 5,
-      image: "https://media.licdn.com/dms/https://media.licdn.com/dms/image/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1776297600&v=beta&t=UTbTi_dxtyQJO4AeP0AiCATLuSD_-ehrZeScFK8v4HM/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1755734400&v=beta&t=tgC_ibY2GO_8GTdnxWpqHDcaBfauE85QfNgRaqy9NkI"
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1776297600&v=beta&t=UTbTi_dxtyQJO4AeP0AiCATLuSD_-ehrZeScFK8v4HM/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1755734400&v=beta&t=tgC_ibY2GO_8GTdnxWpqHDcaBfauE85QfNgRaqy9NkI"
     },
     {
       name: "Carlos Eduardo Fiuza",
