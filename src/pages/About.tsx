@@ -70,7 +70,8 @@ const About: React.FC = () => {
                 <p>
                   Com formação em Recursos Humanos e especialização em Gestão Organizacional e 
                   MBA em Liderança e Gestão de Pessoas, desenvolvi metodologias únicas que combinam estratégia, psicologia e 
-                  marketing pessoal para criar perfis de LinkedIn e currículos irresistíveis que abrem portas para as melhores oportunidades.
+                  marketing pessoal para criar perfis de LinkedIn e currículos irresistíveis que abrem portas para as melhores oportunidades,
+                  além de apoiar individualmente em entrevistas e no gerenciamento de carreira.
                 </p>
                 
                 <p>
