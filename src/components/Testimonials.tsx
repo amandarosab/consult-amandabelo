@@ -73,14 +73,6 @@ const Testimonials: React.FC = () => {
       image: "https://media.licdn.com/dms/image/v2/D4D03AQGSOxYo4GoLhQ/profile-displayphoto-shrink_400_400/B4DZcU2HwUHMAg-/0/1748401421872?e=1776297600&v=beta&t=toIiohfuq4yiGdcRrqj7yUIvtK51sBH_gOFklro9mGk"
     },
     {
-      name: "Jeano Belo Dourado",
-      role: "Instrutor de Power BI",
-      company: "BI Solução",
-      content: "Estou extremamente satisfeito com o excelente trabalho que a Amanda realizou para mim. Com sua dedicação, habilidade e compromisso, ela transformou completamente meu LinkedIn e currículo.",
-      rating: 5,
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1776297600&v=beta&t=UTbTi_dxtyQJO4AeP0AiCATLuSD_-ehrZeScFK8v4HM/v2/D4D03AQEQjU5gFqezHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718997683669?e=1755734400&v=beta&t=tgC_ibY2GO_8GTdnxWpqHDcaBfauE85QfNgRaqy9NkI"
-    },
-    {
       name: "Carlos Eduardo Fiuza",
       role: "Engenheiro de software",
       company: "Bcodex",
