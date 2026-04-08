@@ -1,9 +1,18 @@
 import { Reveal } from './Reveal';
 
 const POSTS = [
-  { text: '3 erros que eliminam seu currículo antes de qualquer humano ler. Eu já vi isso acontecer centenas de vezes do outro lado da mesa...', likes: 142, comments: 38, date: '2 semanas' },
-  { text: 'Seu LinkedIn não é um currículo online. É uma vitrine. E a maioria dos profissionais está usando como depósito de informação...', likes: 98, comments: 22, date: '3 semanas' },
-  { text: 'Fiz uma simulação de entrevista com uma candidata que tinha 10 anos de experiência. Em 5 minutos percebi o problema que nenhum recrutador ia contar pra ela...', likes: 215, comments: 54, date: '1 mês' },
+  {
+    activityId: '7436792920063528960',
+    url: 'https://www.linkedin.com/posts/amandarbelo_fodebacksexistem-rh-dho-activity-7436792920063528960-8JS1',
+  },
+  {
+    activityId: '7369383752776527873',
+    url: 'https://www.linkedin.com/posts/amandarbelo_rh-dho-luto-activity-7369383752776527873-_2rE',
+  },
+  {
+    activityId: '7371561849814867968',
+    url: 'https://www.linkedin.com/posts/amandarbelo_rh-dho-gestaetodepessoas-activity-7371561849814867968-DsIS',
+  },
 ];
 
 export default function LinkedInPosts() {
@@ -17,11 +26,11 @@ export default function LinkedInPosts() {
                 Conteúdo
               </p>
               <h2 className="font-serif leading-[1.15]" style={{ fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--ink)' }}>
-                Últimos posts no LinkedIn
+                Acompanhe meus posts no LinkedIn
               </h2>
             </div>
             <a
-              href="https://linkedin.com/in/amandarbelo"
+              href="https://www.linkedin.com/in/amandarbelo"
               target="_blank"
               rel="noopener noreferrer"
               className="font-sans text-[12px] font-semibold rounded-full px-6 py-2.5 no-underline flex items-center gap-2 transition-all"
@@ -37,39 +46,21 @@ export default function LinkedInPosts() {
 
         <div className="flex gap-5 overflow-x-auto hide-scrollbar pb-1" style={{ scrollSnapType: 'x mandatory' }}>
           {POSTS.map((p, i) => (
-            <Reveal key={i} delay={i * 0.08}>
-              <a
-                href="https://linkedin.com/in/amandarbelo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block min-w-[300px] max-w-[340px] flex-shrink-0 rounded-[10px] p-6 no-underline bg-white transition-shadow hover:shadow-md"
+            <Reveal key={p.activityId} delay={i * 0.08}>
+              <div
+                className="min-w-[300px] max-w-[340px] flex-shrink-0 rounded-[10px] overflow-hidden bg-white"
                 style={{ scrollSnapAlign: 'start', border: '1px solid var(--border)' }}
               >
-                {/* Header */}
-                <div className="flex items-center gap-2.5 mb-3.5">
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center font-serif text-[13px] text-white italic"
-                    style={{ background: 'var(--accent)' }}
-                  >
-                    A
-                  </div>
-                  <div>
-                    <p className="font-sans text-[12px] font-semibold" style={{ color: 'var(--ink)' }}>Amanda Belo</p>
-                    <p className="font-sans text-[10px]" style={{ color: 'var(--ink-muted)' }}>{p.date}</p>
-                  </div>
-                </div>
-
-                {/* Text */}
-                <p className="font-sans text-[14px] leading-[1.7] mb-4" style={{ color: 'var(--ink-light)' }}>
-                  {p.text}
-                </p>
-
-                {/* Engagement */}
-                <div className="flex gap-4 pt-3" style={{ borderTop: '1px solid var(--border)' }}>
-                  <span className="font-sans text-[11px]" style={{ color: 'var(--ink-muted)' }}>👍 {p.likes}</span>
-                  <span className="font-sans text-[11px]" style={{ color: 'var(--ink-muted)' }}>💬 {p.comments}</span>
-                </div>
-              </a>
+                <iframe
+                  src={`https://www.linkedin.com/embed/feed/update/urn:li:activity:${p.activityId}`}
+                  width="100%"
+                  height="400"
+                  frameBorder="0"
+                  allowFullScreen
+                  title={`LinkedIn post ${i + 1}`}
+                  style={{ border: 'none' }}
+                />
+              </div>
             </Reveal>
           ))}
         </div>
