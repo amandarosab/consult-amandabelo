@@ -1,79 +1,99 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import { useState, useEffect } from 'react';
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+interface HeaderProps {
+  onAbout: () => void;
+}
 
-  const navigation = [
-    { name: 'INÍCIO', href: '/' },
-    { name: 'SOBRE', href: '/sobre' },
-    { name: 'SERVIÇOS', href: '/servicos' },
-    { name: 'FEEDBACKS', href: '/#testimonials' },
-    { name: 'CONTATO', href: '/contato' },
-  ];
+const links = [
+  { id: 'inicio', label: 'Início' },
+  { id: 'sobre', label: 'Sobre' },
+  { id: 'servicos', label: 'Serviços' },
+  { id: 'depoimentos', label: 'Depoimentos' },
+  { id: 'contato', label: 'Contato' },
+];
+
+export default function Header({ onAbout }: HeaderProps) {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  const handleClick = (id: string) => {
+    setOpen(false);
+    if (id === 'sobre') {
+      onAbout();
+    }
+  };
 
   return (
-    <>
-      <header className="fixed w-full z-50 bg-white shadow-md h-20">
-        <div className="max-w-7xl mx-auto pl-2 pr-4 sm:px-4 lg:px-6 h-full">
-          <div className="flex justify-between items-center h-full">
-            
-            <Link to="/">
-              <img src={logoImg} alt="Logo Amanda Belo Consultoria" className="h-12 w-auto" />
-            </Link>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
+      style={{
+        background: scrolled ? 'rgba(252,250,245,.92)' : 'transparent',
+        backdropFilter: scrolled ? 'saturate(180%) blur(16px)' : 'none',
+        borderBottom: scrolled ? '1px solid var(--border)' : 'none',
+        padding: scrolled ? '14px 0' : '22px 0',
+      }}
+    >
+      <div className="max-w-[1120px] mx-auto px-7 flex justify-between items-center">
+        {/* Logo */}
+        <a href="#inicio" className="no-underline flex items-center gap-2.5">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+            <path d="M20 4L36 36H4L20 4Z" stroke="var(--accent)" strokeWidth="2.8" />
+            <path d="M20 16L28 32H12L20 16Z" stroke="var(--accent)" strokeWidth="1.6" />
+          </svg>
+          <span className="font-serif text-[17px] text-ink">Amanda Belo</span>
+        </a>
 
-            {/* Navegação Desktop */}
-            <nav className="hidden md:flex space-x-8 items-center">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-semibold transition-colors text-sm tracking-wider ${
-                    location.pathname + location.hash === item.href
-                      ? 'text-purple-600'
-                      : 'text-gray-600 hover:text-purple-600'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Botão do Menu Mobile */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-800 z-50"
+        {/* Desktop links */}
+        <div className="nav-desktop flex gap-7 items-center">
+          {links.map((l) => (
+            <a
+              key={l.id}
+              href={l.id === 'sobre' ? undefined : `#${l.id}`}
+              onClick={
+                l.id === 'sobre'
+                  ? (e) => {
+                      e.preventDefault();
+                      onAbout();
+                    }
+                  : undefined
+              }
+              className="font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-muted no-underline cursor-pointer hover:text-ink transition-colors"
             >
-              {isMenuOpen ? <X className="h-7 w-7 text-white" /> : <Menu className="h-7 w-7" />}
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Menu Overlay para Mobile */}
-      <div
-        className={`md:hidden fixed inset-0 bg-purple-700 bg-opacity-95 backdrop-blur-sm transition-transform duration-300 ease-in-out z-40 ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="text-white text-3xl font-bold tracking-wider"
-            >
-              {item.name}
-            </Link>
+              {l.label}
+            </a>
           ))}
         </div>
-      </div>
-    </>
-  );
-};
 
-export default Header;
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="nav-mobile-btn hidden bg-transparent border-none text-[22px] text-ink cursor-pointer p-1"
+        >
+          {open ? '✕' : '☰'}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="bg-cream px-7 py-7 flex flex-col gap-5 border-t border-border">
+          {links.map((l) => (
+            <a
+              key={l.id}
+              href={l.id === 'sobre' ? undefined : `#${l.id}`}
+              onClick={() => handleClick(l.id)}
+              className="font-sans text-[15px] font-medium text-ink no-underline cursor-pointer"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
+}

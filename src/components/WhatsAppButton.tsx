@@ -1,11 +1,10 @@
-import React from 'react';
 import { MessageCircle } from 'lucide-react';
 
-const WhatsAppButton: React.FC = () => {
-  const whatsappNumber = "5511910623871";
-  const message = "Olá! Gostaria de saber mais sobre os serviços de carreira.";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+const whatsappNumber = '5511910623871';
+const message = 'Olá! Gostaria de saber mais sobre os serviços de carreira.';
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
+export default function WhatsAppButton() {
   return (
     <a
       href={whatsappUrl}
@@ -17,6 +16,4 @@ const WhatsAppButton: React.FC = () => {
       <MessageCircle className="h-6 w-6" />
     </a>
   );
-};
-
-export default WhatsAppButton;
+}

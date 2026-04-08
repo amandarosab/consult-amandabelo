@@ -3,25 +3,21 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      // Secção para adicionar personalizações ao tema
+      fontFamily: {
+        serif: ["'Source Serif 4'", 'Georgia', 'serif'],
+        sans: ["'Inter'", '-apple-system', 'sans-serif'],
+      },
       colors: {
-        // Aqui definimos as suas cores personalizadas
-        'brand-green': '#0cdb45',
-        'purple-700': '#6b21a8',
+        cream: '#fcfaf5',
+        warm: '#f6f3ec',
+        ink: {
+          DEFAULT: '#1a1a1a',
+          light: '#4a4a4a',
+          muted: '#8a8a8a',
+        },
+        accent: '#6b3fa0',
+        border: 'rgba(0, 0, 0, 0.08)',
       },
-      keyframes: {
-        // Aqui definimos os passos da animação "whatsappChat"
-        whatsappChat: {
-          '0%': { opacity: '0', transform: 'translate(-50%, 60%)' },
-          '50%': { opacity: '1', transform: 'translate(-50%, -10%)' },
-          '75%': { opacity: '1', transform: 'translate(-50%, -20%)' },
-          '100%': { opacity: '0', transform: 'translate(-50%, -50%)' },
-        }
-      },
-      animation: {
-        // Aqui damos um nome à nossa animação para podermos usá-la com uma classe
-        'whatsapp-chat': 'whatsappChat 3s infinite',
-      }
     },
   },
   plugins: [],

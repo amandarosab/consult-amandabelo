@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.amandabelo.com.br/sitemap.xml
