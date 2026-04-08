@@ -125,9 +125,6 @@ export default function Testimonials() {
           <h2 className="font-serif leading-[1.15] mb-4" style={{ fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--ink)' }}>
             Histórias reais de<br />transformação
           </h2>
-          <p className="font-sans text-[13px] mb-12" style={{ color: 'var(--ink-muted)' }}>
-            {TESTIMONIALS.length} profissionais atendidos com sucesso
-          </p>
         </Reveal>
 
         {/* Card */}
