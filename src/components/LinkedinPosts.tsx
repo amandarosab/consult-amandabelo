@@ -48,13 +48,13 @@ export default function LinkedInPosts() {
           {POSTS.map((p, i) => (
             <Reveal key={p.activityId} delay={i * 0.08}>
               <div
-                className="min-w-[300px] max-w-[340px] flex-shrink-0 rounded-[10px] overflow-hidden bg-white"
+                className="min-w-[350px] max-w-[380px] flex-shrink-0 rounded-[10px] overflow-hidden bg-white"
                 style={{ scrollSnapAlign: 'start', border: '1px solid var(--border)' }}
               >
                 <iframe
                   src={`https://www.linkedin.com/embed/feed/update/urn:li:activity:${p.activityId}`}
                   width="100%"
-                  height="400"
+                  height="600"
                   frameBorder="0"
                   allowFullScreen
                   title={`LinkedIn post ${i + 1}`}
