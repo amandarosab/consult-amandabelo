@@ -42,10 +42,7 @@ export default function Header({ onAbout }: HeaderProps) {
       <div className="max-w-[1120px] mx-auto px-7 flex justify-between items-center">
         {/* Logo */}
         <a href="#inicio" className="no-underline flex items-center gap-2.5">
-          <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
-            <path d="M20 4L36 36H4L20 4Z" stroke="var(--accent)" strokeWidth="2.8" />
-            <path d="M20 16L28 32H12L20 16Z" stroke="var(--accent)" strokeWidth="1.6" />
-          </svg>
+          <img src="/favicon.ico" alt="Amanda Belo" width="24" height="24" />
           <span className="font-serif text-[17px] text-ink">Amanda Belo</span>
         </a>
 
