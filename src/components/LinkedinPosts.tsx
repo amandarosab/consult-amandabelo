@@ -21,7 +21,7 @@ export default function LinkedInPosts() {
               </h2>
             </div>
             <a
-              href="https://linkedin.com/in/amandabelo"
+              href="https://linkedin.com/in/amandarbelo"
               target="_blank"
               rel="noopener noreferrer"
               className="font-sans text-[12px] font-semibold rounded-full px-6 py-2.5 no-underline flex items-center gap-2 transition-all"
@@ -39,7 +39,7 @@ export default function LinkedInPosts() {
           {POSTS.map((p, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <a
-                href="https://linkedin.com/in/amandabelo"
+                href="https://linkedin.com/in/amandarbelo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block min-w-[300px] max-w-[340px] flex-shrink-0 rounded-[10px] p-6 no-underline bg-white transition-shadow hover:shadow-md"
