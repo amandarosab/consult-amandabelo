@@ -45,7 +45,7 @@ export default function About({ onClose }: AboutProps) {
           className="w-20 h-20 rounded-full flex items-center justify-center font-serif text-[32px] text-white italic mb-10"
           style={{ background: 'var(--accent)' }}
         >
-          A
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFVprX3ZRURVlH2vm1A4k5_i5iUpCIp2BRYzXefr-nxxc2Y-mKLUy-zsavhm6oXttIy2ATLYaMxN8GiL1Bm47-I0j1q30vv5BqxbXoyLenqDkO-F8arbfGGGR6StETQE1CMowRQr7Fd4GgkB1GBib0YsaDe1Jam38hpxjl-y4Uc-AjoDY_DlgsBEgFx8s/w604-h604/5.png" alt="Avatar" className="w-full h-full rounded-full object-cover" />
         </div>
 
         <h1

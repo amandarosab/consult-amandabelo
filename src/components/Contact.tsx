@@ -12,7 +12,7 @@ export default function Contact() {
             Vamos conversar sobre<br />a sua carreira?
           </h2>
           <p className="font-sans text-[15px] leading-[1.7] max-w-[420px] mx-auto mb-10" style={{ color: 'rgba(255,255,255,.5)' }}>
-            Me chama no WhatsApp ou manda um e-mail. Respondo em até 24h.
+            Me chama no WhatsApp ou manda um e-mail. Respondo em até 2h!
           </p>
         </Reveal>
 
@@ -41,7 +41,7 @@ export default function Contact() {
           <div className="flex gap-3 justify-center">
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com/in/amandabelo"
+              href="https://linkedin.com/in/amandarbelo"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -55,7 +55,7 @@ export default function Contact() {
 
             {/* Instagram */}
             <a
-              href="https://instagram.com/amandabelo"
+              href="https://instagram.com/consult.amandabelo"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
