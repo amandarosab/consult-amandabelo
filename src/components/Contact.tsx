@@ -6,14 +6,11 @@ export default function Contact() {
       <div className="max-w-[680px] mx-auto text-center">
         <Reveal>
           <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] mb-5" style={{ color: 'var(--accent)' }}>
-            Contato
+            E aí,
           </p>
           <h2 className="font-serif leading-[1.15] text-white mb-5" style={{ fontSize: 'clamp(28px, 4vw, 42px)' }}>
             Vamos conversar sobre<br />a sua carreira?
           </h2>
-          <p className="font-sans text-[15px] leading-[1.7] max-w-[420px] mx-auto mb-10" style={{ color: 'rgba(255,255,255,.5)' }}>
-            Me chama no WhatsApp ou manda um e-mail. Respondo em até 2h!
-          </p>
         </Reveal>
 
         <Reveal delay={0.1}>

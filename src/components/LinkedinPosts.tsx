@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Reveal } from './Reveal';
 
 const POSTS = [
@@ -16,6 +17,16 @@ const POSTS = [
 ];
 
 export default function LinkedInPosts() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const prevPost = () => {
+    setActiveIndex((current) => (current === 0 ? POSTS.length - 1 : current - 1));
+  };
+
+  const nextPost = () => {
+    setActiveIndex((current) => (current === POSTS.length - 1 ? 0 : current + 1));
+  };
+
   return (
     <section className="py-24 px-7" style={{ background: 'var(--cream)', borderTop: '1px solid var(--border)' }}>
       <div className="max-w-[1120px] mx-auto">
@@ -44,26 +55,70 @@ export default function LinkedInPosts() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {POSTS.map((p, i) => (
-            <Reveal key={p.activityId} delay={i * 0.08}>
-              <div
-                className="rounded-[10px] overflow-hidden bg-white"
-                style={{ border: '1px solid var(--border)' }}
+        <Reveal delay={0.08}>
+          <div className="max-w-[480px] mx-auto">
+            <div className="flex items-center justify-between mb-3">
+              <button
+                onClick={prevPost}
+                aria-label="Post anterior"
+                className="w-9 h-9 rounded-full bg-transparent cursor-pointer transition-colors"
+                style={{ border: '1.5px solid var(--border)', color: 'var(--ink)' }}
               >
-                <iframe
-                  src={`https://www.linkedin.com/embed/feed/update/urn:li:activity:${p.activityId}`}
-                  width="100%"
-                  height="750"
-                  frameBorder="0"
-                  allowFullScreen
-                  title={`LinkedIn post ${i + 1}`}
-                  style={{ border: 'none' }}
+                ←
+              </button>
+              <p className="font-sans text-[12px]" style={{ color: 'var(--ink-muted)' }}>
+                Post {activeIndex + 1} de {POSTS.length}
+              </p>
+              <button
+                onClick={nextPost}
+                aria-label="Próximo post"
+                className="w-9 h-9 rounded-full bg-transparent cursor-pointer transition-colors"
+                style={{ border: '1.5px solid var(--border)', color: 'var(--ink)' }}
+              >
+                →
+              </button>
+            </div>
+
+            <div
+              className="rounded-[12px] overflow-hidden bg-white"
+              style={{ border: '1px solid var(--border)' }}
+            >
+              <iframe
+                src={`https://www.linkedin.com/embed/feed/update/urn:li:activity:${POSTS[activeIndex].activityId}`}
+                width="100%"
+                height="560"
+                frameBorder="0"
+                allowFullScreen
+                title={`LinkedIn post ${activeIndex + 1}`}
+                style={{ border: 'none' }}
+              />
+            </div>
+
+            <div className="flex items-center justify-center gap-2 mt-4">
+              {POSTS.map((post, index) => (
+                <button
+                  key={post.activityId}
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Ir para post ${index + 1}`}
+                  className="w-2.5 h-2.5 rounded-full p-0 border-0 cursor-pointer"
+                  style={{
+                    background: index === activeIndex ? 'var(--accent)' : 'rgba(0,0,0,.15)',
+                  }}
                 />
-              </div>
-            </Reveal>
-          ))}
-        </div>
+              ))}
+            </div>
+
+            <a
+              href={POSTS[activeIndex].url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center font-sans text-[12px] font-semibold mt-4 no-underline"
+              style={{ color: 'var(--accent)' }}
+            >
+              Abrir este post no LinkedIn
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
