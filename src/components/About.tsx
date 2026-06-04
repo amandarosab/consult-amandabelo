@@ -45,7 +45,7 @@ export default function About({ onClose }: AboutProps) {
           className="w-20 h-20 rounded-full flex items-center justify-center font-serif text-[32px] text-white italic mb-10"
           style={{ background: 'var(--accent)' }}
         >
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEebV69J_A33g/profile-displayphoto-scale_400_400/B4DZyHiuvpGUAk-/0/1771800556355?e=1782345600&v=beta&t=R4MOC3y-utthtW5JLH_38VAV2zd-AH5JkQgv_z9VaLQ" />
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFqyuVSFlVznA/profile-displayphoto-scale_400_400/B4DZ6UgjnzH8Ag-/0/1780608025835?e=1782345600&v=beta&t=Lo2trMgFk06BRB5AXq5LusqVJMLcpL4RzpKbMe2xySI" />
         </div>
 
         <h1

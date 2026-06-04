@@ -63,7 +63,7 @@ const TESTIMONIALS = [
     role: 'Engenheiro de software',
     company: 'Bcodex',
     text: 'Atendimento profissional e dedicado, após aplicação das dicas o resultado foi quase imediato!',
-    photo: '/assets/clients/carlos-eduardo-fiuza.jpg',
+    photo: '/assets/clients/carlos-eduardo-fiuza.png',
   },
   {
     name: 'Samuel Silva',
