@@ -2,10 +2,21 @@ import { useRef } from 'react';
 import { Reveal } from './Reveal';
 
 const POSTS = [
+    {
+    id: '7449874816825761792',
+    image:
+      'https://media.licdn.com/dms/image/v2/D4D22AQFSspBAITw4RA/feedshare-shrink_800/B4DZ2NFqoxH8Ak-/0/1776188566519?e=1782345600&v=beta&t=t_hc8WsNiSs_A8w6WquNjwOepEUb24Fy_jW20kFwjTg',
+    title: 'Como saber se onde você trabalha existe segurança psicológica?',
+    excerpt:
+      'É super fácil identificar se o lugar onde você trabalha é realmente seguro e isso não tem nada a ver com post bonito no dia do trabalho, ovo de páscoa, selo GPTW ou palestra de saúde mental.',
+    tag: '#rh #DHO #mundocorporativo #saudemental',
+    url: 'https://www.linkedin.com/posts/amandarbelo_rh-dho-culturaorganizacional-activity-7449874816825761792-Y8BU?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACJc800BxnEyb4NDXmIr0J5woIAHDni575Y',
+  },
+  
   {
     id: '7436792920063528960',
     image:
-      'https://media.licdn.com/dms/image/v2/D4D22AQHO_sCMm3sh_A/feedshare-shrink_800/B4DZzQUnaPIgAc-/0/1773021591525?e=1777507200&v=beta&t=7BzHydxQlguIXRYWEUi3w8zStv1E0bietAM78QOSgyo',
+      'https://media.licdn.com/dms/image/v2/D4D22AQHO_sCMm3sh_A/feedshare-shrink_1280/B4DZzQUnaPIgAM-/0/1773021591525?e=1782345600&v=beta&t=FMwwxFEPkTMl92qutVE6_LpGT3EBy0E4tH7fbHMajaM',
     title: '5 conselhos de carreira que eu queria ter recebido no primeiro emprego',
     excerpt:
       'Resumo sobre networking, leitura de feedbacks, documentação de entregas e decisões de carreira.',
@@ -15,7 +26,7 @@ const POSTS = [
   {
     id: '7369383752776527873',
     image:
-      'https://media.licdn.com/dms/image/v2/D4D22AQHFqIYc1dXNhg/feedshare-shrink_1280/B4DZj483jOIgAw-/0/1756523363476?e=1777507200&v=beta&t=s75NNk5GBX6nk0NHXCQKMqwGYAP2uT5984Oq3GuCgbY',
+      'https://media.licdn.com/dms/image/v2/D4D22AQHFqIYc1dXNhg/feedshare-shrink_1280/B4DZj483jOIgAw-/0/1756523363476?e=1782345600&v=beta&t=71HxHdW4TgU0YFcHEk3QSRKnIvceoE4qD1h3ei3-Aog',
     title: 'Nem todo luto é visível: o impacto disso no trabalho',
     excerpt:
       'Reflexão sobre perdas silenciosas, saúde emocional e como lideranças podem criar ambientes mais humanos e seguros.',
@@ -25,7 +36,7 @@ const POSTS = [
   {
     id: '7371561849814867968',
     image:
-      'https://media.licdn.com/dms/image/v2/D4D22AQGBXoosUsKVww/feedshare-shrink_800/B4DZkz0_4yIcAk-/0/1757511156202?e=1777507200&v=beta&t=Uyk8WdIsZxoLFFXD4r_X4ZYloSmQYWW3O2gB_mCM9Nw',
+      'https://media.licdn.com/dms/image/v2/D4D22AQFwX70qYedeGg/feedshare-shrink_800/B4DZeprqDdG8Ag-/0/1750898484776?e=1782345600&v=beta&t=7dLAWihoWzhdYIW_p6x-71dSmtsEhxPhrYaBgO7D1Q0',
     title: 'Produtividade não é linear: um alerta sobre cultura de pressão',
     excerpt:
       'Um recorte sobre como a desconfiança e o excesso de controle afetam o clima e produtividade.',

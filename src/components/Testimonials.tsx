@@ -7,84 +7,84 @@ const TESTIMONIALS = [
     role: 'Desenvolvedor de software embarcado',
     company: 'Stellantis',
     text: 'Profissional focada e assertiva sempre em busca da excelência em seus trabalhos. Recomendo fortemente seus serviços!',
-    photo: 'https://drive.google.com/drive/u/0/folders/1gPBlH6nWsG4omssALaDu5yCsdFb8PmTW',
+    photo: '/assets/clients/shaymon-alvarez.jpg',
   },
   {
     name: 'Julis Araujo',
     role: 'Engenheiro de software',
     company: 'Bcodex',
     text: 'O trabalho da Amanda me deu resultado imediato. No dia seguinte aos ajustes dela em meu LinkedIn já comecei a receber novas propostas (inclusive internacionais). Valeu a pena demais!',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQGH34NrzHxpPw/profile-displayphoto-scale_400_400/B4DZi_h73bH0Ag-/0/1755560001560?e=1776297600&v=beta&t=R2uSuxFmhorf7u53ymheY-6ypm158hHcVG457yd_Bro',
+    photo: '/assets/clients/julis-araujo.jpg',
   },
   {
     name: 'Gabriely Rodrigues',
     role: 'Advogada',
     company: 'Ibiaçu Loteamentos',
     text: 'A Amanda demonstra expertise em sua área de atuação, além de ser extremamente simpática e profissional. O trabalho que ela fez com o meu Linkedin foi incrível. Super recomendo!',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQEjD2gGw4rWrw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718255222931?e=1776297600&v=beta&t=10YlF7v0Dww9xCB59JUVWrpsDzLcow5-oR-fdGfZCpU',
+    photo: '/assets/clients/gabriely-rodrigues.jpg',
   },
   {
     name: 'Monik Rangel',
     role: 'Product manager',
     company: 'Digix',
     text: 'Amanda foi incrível, trouxe uma análise completa que me ajudou a desenvolver meu case e ir para entrevista muito mais preparada! Já indiquei pra várias amigas',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQFL6DcqSrVt6w/profile-displayphoto-shrink_400_400/B4DZVi8I1HGcAg-/0/1741121688023?e=1776297600&v=beta&t=lbtRCY4uNGk1RmfcwxWP38JpKHp3jH0qPrPPXnTv5mg',
+    photo: '/assets/clients/monik-rangel.jpg',
   },
   {
     name: 'Jackson Miranda',
     role: 'Especialista em infraestrutura e TI',
     company: 'Sonda',
     text: 'As sugestões fizeram total sentido, melhorias práticas para deixar meu perfil mais estratégico e atrativo. Agradeço pelo cuidado e pela qualidade do seu trabalho!',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQHa1inZ3PYi9g/profile-displayphoto-scale_400_400/B4DZnqO8TBGQAg-/0/1760571410249?e=1776297600&v=beta&t=X9Ll3mSNCbdFUjYFC5q4_h7AVNenCiGMLhHrmQDGu1I',
+    photo: '/assets/clients/jackson-miranda.jpg',
   },
   {
     name: 'Gilcllys Costa',
     role: 'Engenheiro de software',
     company: 'John Deere',
     text: 'Responde rapidamente e sempre preocupada com o cliente perguntando se ele quer mais alguma alteração. Entregou tudo o que prometeu. Super indico o serviço dela!',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQESaVVHVwQI-Q/profile-displayphoto-shrink_400_400/B4DZUbHJn6HIAg-/0/1739916614776?e=1776297600&v=beta&t=w-jZAv0arq2hUgPq-DH5GtcFCT5unFtwk24-4WRFx8s',
+    photo: '/assets/clients/gilcllys-costa.jpg',
   },
   {
     name: 'Yasmin Bueno',
     role: 'Executiva de vendas',
     company: 'GL Events',
     text: 'Estou grata por toda a atenção durante a prestação de serviços da Amanda, ela demonstrou muito conhecimento e domínio no assunto, e seus serviços já mostraram resultados positivos!',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQHlUsKdULyyyA/profile-displayphoto-scale_400_400/B4DZld37K2JQAg-/0/1758216567134?e=1776297600&v=beta&t=SaUqU0URTx3oZPy7bLw5Zm_z59ky9JFGTIsjpcoE27M',
+    photo: '/assets/clients/yasmin-bueno.jpg',
   },
   {
     name: 'Pedro Brantis',
     role: 'Engenheiro QA',
     company: 'FPFtech',
     text: 'O trabalho dela é ágil e eficaz, tive retornos muito rápido com seus serviços',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQGSOxYo4GoLhQ/profile-displayphoto-shrink_400_400/B4DZcU2HwUHMAg-/0/1748401421872?e=1776297600&v=beta&t=toIiohfuq4yiGdcRrqj7yUIvtK51sBH_gOFklro9mGk',
+    photo: '/assets/clients/pedro-brantis.jpg',
   },
   {
     name: 'Carlos Eduardo Fiuza',
     role: 'Engenheiro de software',
     company: 'Bcodex',
     text: 'Atendimento profissional e dedicado, após aplicação das dicas o resultado foi quase imediato!',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQG_h2-r2IyZcQ/profile-displayphoto-scale_400_400/B4DZzzavkmIkAg-/0/1773610401886?e=1776297600&v=beta&t=xKXq4nNirBOnkbbTEn7nM96xxj-MbrIY0uC1OUqTij0',
+    photo: '/assets/clients/carlos-eduardo-fiuza.jpg',
   },
   {
     name: 'Samuel Silva',
     role: 'Engenheiro de dados',
     company: 'INDT',
     text: 'Muito profissional e competente. O que ela fez no meu perfil me ajudou a encontrar minha vaga.',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQEW2Vm3zh-qnA/profile-displayphoto-scale_400_400/B4DZh7Lr5gH8Ag-/0/1754413318349?e=1776297600&v=beta&t=R6ylGlnfvLT_am9vn5vOkpCOSlLTuqNc8-KDN678X5w',
+    photo: '/assets/clients/samuel-silva.jpg',
   },
   {
     name: 'Cauet Delfim',
     role: 'Técnico em manutenção de máquinas',
     company: 'SWM International',
     text: 'Foi excelente, ótimo trabalho que ela fez no meu perfil',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQFVgUNVMsMeJg/profile-displayphoto-scale_400_400/B4DZgoc5eBHsAg-/0/1753025321577?e=1776297600&v=beta&t=m3K3f551berdebRvNzMdsIq9yP4Bj0gHoWltDbj1Mbo',
+    photo: '/assets/clients/cauet-delfim.jpg',
   },
   {
     name: 'Matheus Freitas',
     role: 'Engenheiro de dados',
     company: 'Bradesco',
     text: 'Amanda é uma profissional sensacional, preocupada com cada detalhe e super ágil. Recomendo seus serviços',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQHwcrdH0zxIag/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718219398445?e=1776297600&v=beta&t=fOXsOd8oSk3DL4bJedoBgsA066AEFW1OmKLrHVeBAiw',
+    photo: '/assets/clients/matheus-freitas.jpg',
   },
 ];
 
@@ -149,6 +149,7 @@ export default function Testimonials() {
               alt={t.name}
               className="w-12 h-12 rounded-full object-cover"
               loading="lazy"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/assets/default-avatar.svg'; }}
             />
             <div>
               <p className="font-sans text-[14px] font-semibold" style={{ color: 'var(--ink)' }}>

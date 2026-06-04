@@ -22,7 +22,7 @@ export default function Contact() {
               className="font-sans text-[13px] font-semibold px-8 py-3.5 rounded-full no-underline flex items-center gap-2"
               style={{ color: 'var(--ink)', background: '#10b981' }}
             >
-              <span className="text-[16px]">💬</span> WhatsApp
+              <span className="text-[16px]"></span> WhatsApp
             </a>
             <a
               href="mailto:amandabelo.contato@outlook.com"
