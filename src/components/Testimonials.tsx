@@ -7,7 +7,7 @@ const TESTIMONIALS = [
     role: 'Desenvolvedor de software embarcado',
     company: 'Stellantis',
     text: 'Profissional focada e assertiva sempre em busca da excelência em seus trabalhos. Recomendo fortemente seus serviços!',
-    photo: 'https://media.licdn.com/dms/image/v2/D4D03AQEkBqiM4yROwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727722100798?e=1776297600&v=beta&t=eCRvZkiYIOeJs2-nty6zR7msYJ5Igruzg0nkzIvZXFg',
+    photo: 'https://drive.google.com/drive/u/0/folders/1gPBlH6nWsG4omssALaDu5yCsdFb8PmTW',
   },
   {
     name: 'Julis Araujo',
