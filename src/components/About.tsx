@@ -45,7 +45,7 @@ export default function About({ onClose }: AboutProps) {
           className="w-20 h-20 rounded-full flex items-center justify-center font-serif text-[32px] text-white italic mb-10"
           style={{ background: 'var(--accent)' }}
         >
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFVprX3ZRURVlH2vm1A4k5_i5iUpCIp2BRYzXefr-nxxc2Y-mKLUy-zsavhm6oXttIy2ATLYaMxN8GiL1Bm47-I0j1q30vv5BqxbXoyLenqDkO-F8arbfGGGR6StETQE1CMowRQr7Fd4GgkB1GBib0YsaDe1Jam38hpxjl-y4Uc-AjoDY_DlgsBEgFx8s/w604-h604/5.png" alt="Avatar" className="w-full h-full rounded-full object-cover" />
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEebV69J_A33g/profile-displayphoto-scale_400_400/B4DZyHiuvpGUAk-/0/1771800556355?e=1782345600&v=beta&t=R4MOC3y-utthtW5JLH_38VAV2zd-AH5JkQgv_z9VaLQ" />
         </div>
 
         <h1
@@ -57,7 +57,7 @@ export default function About({ onClose }: AboutProps) {
 
         {[
           'Sou a Amanda, consultora de RH e gestão de carreira com mais de 5 anos de experiência em desenvolvimento humano e organizacional. Comecei minha trajetória em 2020, e desde então venho ajudando profissionais a se posicionarem melhor no mercado de trabalho.',
-          'Já atuei como Business Partner, Analista de DHO e Recrutamento e Seleção para mais de 5 empresas! Também tenho experiência com implantantação de RH, criação de políticas, fluxos e planos de cargos e salários, bem como ciclo de desempenho, pesquisas e programas de D&I.',
+          'Já atuei como Business Partner, Analista de DHO e Recrutamento e Seleção para mais de cinco empresas! Também tenho experiência com implantantação de RH, criação de políticas, fluxos e planos de cargos e salários, bem como ciclo de desempenho, pesquisas e programas de D&I.',
           'Minha abordagem combina três áreas que geralmente aparecem separadas: estratégia de carreira, psicologia organizacional e marketing pessoal. Quando otimizo seu currículo ou preparo você para uma entrevista, estou olhando com os mesmos olhos de quem já analisou centenas de candidatos do outro lado da mesa.',
           'Tenho MBA em Liderança e Gestão de Pessoas, pós-graduação em Psicologia Organizacional e estou cursando Engenharia de Software, porque acredito que tecnologia e gente andam juntos.',
         ].map((p, i) => (

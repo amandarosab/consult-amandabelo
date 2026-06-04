@@ -10,7 +10,7 @@ export default function AboutMini({ onOpen }: AboutMiniProps) {
     >
       <div className="max-w-[1120px] mx-auto flex items-center gap-6 flex-wrap">
         <img
-          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFVprX3ZRURVlH2vm1A4k5_i5iUpCIp2BRYzXefr-nxxc2Y-mKLUy-zsavhm6oXttIy2ATLYaMxN8GiL1Bm47-I0j1q30vv5BqxbXoyLenqDkO-F8arbfGGGR6StETQE1CMowRQr7Fd4GgkB1GBib0YsaDe1Jam38hpxjl-y4Uc-AjoDY_DlgsBEgFx8s/w604-h604/5.png"
+          src="https://media.licdn.com/dms/image/v2/D4D03AQEebV69J_A33g/profile-displayphoto-scale_400_400/B4DZyHiuvpGUAk-/0/1771800556355?e=1782345600&v=beta&t=R4MOC3y-utthtW5JLH_38VAV2zd-AH5JkQgv_z9VaLQ"
           alt="Amanda Belo"
           className="w-14 h-14 rounded-full shrink-0 object-cover"
         />
