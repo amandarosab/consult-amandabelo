@@ -7,28 +7,28 @@ const SERVICES = [
     title: 'Otimização estratégica de LinkedIn',
     desc: 'Seu perfil vira uma ferramenta de atração. Reescrevo título, sobre, experiências e configurações com foco em recrutadores e algoritmo.',
     items: ['Título com palavras-chave estratégicas', "Reescrita do 'Sobre' com narrativa profissional", 'Experiências reescritas com foco em resultados', 'Configuração estratégica do perfil'],
-    price: '110', delivery: '2–3 dias úteis', scope: 'Análise completa + Reescrita + Revisão', popular: true,
+    price: '50', delivery: '2–3 dias úteis', scope: 'Análise completa + Reescrita + Revisão', popular: true,
   },
   {
     id: 'curriculo',
     title: 'Otimização de currículo (Foco em ATS)',
     desc: 'Seu currículo passa pelos filtros automáticos e chega nas mãos de quem decide. Formato otimizado para software e para gente.',
     items: ['Formato otimizado para ATS e leitura humana', 'Inserção de palavras-chave estratégicas', 'Experiências reestruturadas com foco em impacto', 'Foco em resultados mensuráveis'],
-    price: '115', delivery: '1–2 dias úteis', scope: 'Reformulação completa + Template profissional', popular: true,
+    price: '50', delivery: '1–2 dias úteis', scope: 'Reformulação completa + Template profissional', popular: true,
   },
   {
     id: 'entrevista-comportamental',
     title: 'Preparação para entrevista comportamental',
     desc: 'Você aprende a responder com estratégia, comunicar seu valor com clareza e sair da entrevista sabendo que deu o seu melhor.',
     items: ['Simulação individual online', 'Técnicas de storytelling', 'Feedback direcionado para performance', 'Estratégias de comunicação eficaz'],
-    price: '115', delivery: '1 sessão de 90min', scope: 'Simulação + Feedback + Material de apoio',
+    price: '99', delivery: '1 sessão de 90min', scope: 'Simulação + Feedback + Material de apoio',
   },
   {
     id: 'entrevista-tecnica',
     title: 'Preparação para entrevista técnica',
     desc: 'Demonstre sua expertise com segurança. Sessão focada nos temas da sua área, com desafios reais e feedback técnico detalhado.',
     items: ['Sessão focada em temas da sua área', 'Simulação de desafios reais do mercado', 'Estratégias para comunicar conhecimento', 'Preparação para live coding'],
-    price: '130', delivery: '1 sessão de 120min', scope: 'Simulação + Desafios práticos + Feedback técnico',
+    price: '110', delivery: '1 sessão de 120min', scope: 'Simulação + Desafios práticos + Feedback técnico',
   },
 ];
 
